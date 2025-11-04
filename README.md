@@ -6,16 +6,16 @@ Link to the full presentation: [LLMs on HPC](https://docs.google.com/presentatio
 
 # Setup
 
->[!NOTE]
->Set `OLLAMA_MODELS` if you are on the Bouchet cluster and want to use the models that were pre-downloaded for the workshop. If you don't set this variable, ollama will download models to your home directory. Either option is fine.
+
+Set `OLLAMA_MODELS` if you are on the Bouchet cluster and want to use the models that were pre-downloaded for the workshop. If you don't set this variable, ollama will download models to your home directory. Either option is fine.
 
 ```bash
 export OLLAMA_MODELS=/nfs/roberts/project/hpcllm/shared/.ollama
 ```
 
->[!NOTE]
->If you cloned this repo (`ycrc/llms-on-hpc`), you don't need to perform the next two commands.
->Also, the copy command below will only work on bouchet.
+
+If you cloned this repo (`ycrc/llms-on-hpc`), you don't need to perform the next two commands.
+Also, the copy command below will only work on bouchet.
 
 ```bash
 mkdir ~/ycrc_llm_workshop
