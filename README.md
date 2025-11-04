@@ -1,20 +1,20 @@
 # llms-on-hpc
 
-This document reproduces the commands in the LLMs on HPC workshop presentation, with descriptions of how the workflow may vary if you are running the workshop using your regular account and/or on another cluster besides Bouchet.
+This document reproduces the commands in the LLMs on HPC workshop presentation. It has been updated assuming you are running the workshop using your regular account, instead of the course account provided to you during the workshop.
 
 Link to the full presentation: [LLMs on HPC](https://docs.google.com/presentation/d/1lw5FUAJuziGIb5GpviSy2t-Swo2EU-aZ/edit?usp=sharing&ouid=105690574600061947997&rtpof=true&sd=true)
 
 # Setup
 
 >[!NOTE]
->Setting `OLLAMA_MODELS` works best if you are using your course account on bouchet. Don't set this variable if you are running this workshop using your regular account.
+>Set `OLLAMA_MODELS` if you want to use the models predownloaded for the workshop, and are on the Bouchet cluster. You can download models to your home directory if you don't set this variable. Either option is fine.
 
 ```bash
 echo 'export OLLAMA_MODELS=/nfs/roberts/project/hpcllm/shared/.ollama' >> .bashrc
 ```
 
 >[!NOTE]
->If you cloned the `ycrc/llms-on-hpc` repo you don't need to make this directory or copy this file.
+>If you cloned this repo (`ycrc/llms-on-hpc`), you don't need to perform the next two commands.
 >Also, this copy command will only work on bouchet
 
 ```bash
@@ -24,11 +24,8 @@ cp /apps/data/training/hpc_llm/ollama.ipynb ~/ycrc_llm_workshop
 
 # Running Ollama
 
->[!NOTE]
->Use a different partition if you are running this workshop with your regular account.
-
 ```bash
-salloc –p education --mem=10G
+salloc –p devel --mem=10G
 ```
 
 >[!NOTE]
@@ -63,7 +60,7 @@ exit
 >Use a different partition if you are running this workshop with your regular account and/or on a cluster other than bouchet.
 
 ```bash
-salloc -p education_gpu --gpus=1
+salloc -p gpu_devel --gpus=1
 
 nvidia-smi
 
@@ -106,8 +103,7 @@ exit
 
 # Ollama in Jupyter/Python
 
->[!NOTE]
->If you are using your course account, this environment has already been created for you.
+Create an environment to run the jupyter note book.
 
 ```bash
 salloc -p devel --mem=20G
