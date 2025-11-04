@@ -56,9 +56,6 @@ exit
 
 # Running Ollama - with a GPU
 
->[!NOTE]
->Use a different partition if you are running this workshop with your regular account and/or on a cluster other than bouchet.
-
 ```bash
 salloc -p gpu_devel --gpus=1
 
