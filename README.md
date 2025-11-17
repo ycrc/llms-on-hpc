@@ -6,17 +6,11 @@ Link to the full presentation: [LLMs on HPC](https://docs.google.com/presentatio
 
 # Setup
 
+>[!NOTE]
+>You should not set `OLLAMA_MODELS` to the shared model directory, as we did in the workshop. The shared directory is only accessible using course accounts.
 
-Set `OLLAMA_MODELS` if you are on the Bouchet cluster and want to use the models that were pre-downloaded for the workshop. If you don't set this variable, ollama will download models to your home directory. Either option is fine.
-
-```bash
-export OLLAMA_MODELS=/nfs/roberts/project/hpcllm/shared/.ollama
-```
-
-
-If you cloned this repo (`ycrc/llms-on-hpc`), you don't need to perform the next two commands.
-Also, the copy command below will only work on bouchet.
-
+Copy Jupyter notebook to your home directory. The copy command below will only work on bouchet. If you cloned this repo (`ycrc/llms-on-hpc`), you don't need to perform the next two commands.
+ 
 ```bash
 mkdir ~/ycrc_llm_workshop
 cp /apps/data/training/hpc_llm/ollama.ipynb ~/ycrc_llm_workshop
@@ -25,7 +19,7 @@ cp /apps/data/training/hpc_llm/ollama.ipynb ~/ycrc_llm_workshop
 # Running Ollama
 
 ```bash
-salloc –p devel --mem=10G
+salloc -p devel --mem=10G
 ```
 
 >[!NOTE]
