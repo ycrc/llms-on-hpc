@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -ue
 
@@ -17,5 +17,4 @@ echo -e 'Copying workshop materials to ~/ycrc_llm_workshop\n'
 
 git clone https://github.com/ycrc/llms-on-hpc.git ~/ycrc_llm_workshop
 
-echo -e '\nSetup complete. Please log in and out or source .bashrc before loading ollama'
-
+echo -e '\nScript complete. To set OLLAMA_MODELS,  run "source ~/.bashrc", or log in and out.'
